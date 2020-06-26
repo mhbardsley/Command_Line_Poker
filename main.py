@@ -701,7 +701,7 @@ class Poker:
         self.active_players = [player for player in self.active_players if player.isInGame]
         if len(self.active_players) == 1:
             display.show_table(self.initial_players, self.table, 0)
-            display.show_game_winners(self.initial_players, [self.active_players[0].name], self.long_pause)
+            display.show_game_winners(self.initial_players, [self.active_players[0].name])
             return True
         else:
             while True:
@@ -713,7 +713,7 @@ class Poker:
                     max_chips = max(self.active_players, key=lambda player: player.chips).chips
                     winners_names = [player.name for player in self.active_players if player.chips == max_chips]
                     display.show_table(self.initial_players, self.table, 0)
-                    display.show_game_winners(self.initial_players, winners_names, self.long_pause)
+                    display.show_game_winners(self.initial_players, winners_names)
                     return True
 
 
